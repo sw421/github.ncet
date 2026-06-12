@@ -1,0 +1,57 @@
+Experiment III 
+Objective: Introduction to Docker, Writing Docker files, Building and running 
+Docker containers.  
+Required Software / Tools: Docker Desktop, Python, VSCode. 
+Procedure: 
+I. Install Docker Desktop 
+1. Download docker desktop from official Docker Website as per your O.S. or 
+download from the Store. 
+https://www.docker.com/products/docker-desktop/  
+2. Click the executable file and proceed with installation steps.  
+3. Once installed, open the docker desktop app and register with your email. 
+ 
+ 
+4. Verify your email to complete the installation. 
+ 
+5. Open and validate Docker desktop is running fine. Fix if any issues. 
+ 
+ 
+ 
+II. Containerization Python application using Docker: 
+1. Open VSCode and Create and open a New Folder with name Exp3. 
+2. In VSCode, under Exp3, create file “requirements.txt” with following contents: 
+flask==2.3.2 
+3. Create app.py with below contents: 
+from flask import Flask 
+app = Flask(__name__) 
+@app.route("/") 
+def home(): 
+return "Hello, Dockerized Flask App!" 
+if __name__ == "__main__": 
+app.run(host="0.0.0.0", port=5000) 
+4. Now create one more file with name “Dockerfile” with following contents: 
+# Use official Python image 
+FROM python:3.9-slim 
+# Set working directory 
+WORKDIR /app 
+# Copy application files 
+COPY app.py . 
+COPY requirements.txt . 
+# Install dependencies 
+RUN pip install -r requirements.txt 
+# Expose port 
+EXPOSE 5000 
+# Run the app 
+CMD ["python", "app.py"] 
+5. Build the docker Image by running below command from terminal: 
+docker build -t flask-web-app . 
+6. Run the Container by running below command: 
+docker run -d -p 5000:5000 --name flask-container flask-web-app 
+7. Validate from Docker desktop if container is running and also verify application 
+from the browser: 
+http://localhost:5000/  
+8. Stop the container, using below steps: 
+a. docker ps 
+b. docker stop flask-container 
+c. docker rm flask-container 
+d.  docker ps 
