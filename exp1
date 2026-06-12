@@ -1,0 +1,35 @@
+Experiment I 
+Objective: Demonstrate version control using Git. 
+Required Software / Tools: GIT, Python, VSCode 
+Procedure: 
+1. Set up a Working directory or folder as below: 
+Open Visual Studio > Menu options > File > Open Folder > Right click > create New 
+Folder with name Exp1. 
+2. Now open terminal from visual studio (Visual Studio > Menu options > Terminal > 
+New Terminal) 
+3. From the terminal run below commands to initialize git in the Exp1 folder.  
+git init 
+git status 
+4. Create a file (on VSCode left pane click + New file) and name it greet.py. On right pane 
+write a basic Python program as below: 
+# Basic Python Program - Version 1 
+print("Hello, World!") 
+5. Save the file and move to git Stage and commit the file using below commands: 
+git add greet.py 
+git commit -m "Initial commit: add greet.py" 
+NOTE: check git status before each and after command execution. 
+6. Edit the file as below to make a change to the program and save the file.  
+# Basic Python Program - Version 2 
+print("Hello, Git versioning!") 
+7. Add the updated file to git Stage and commit the change 
+git add greet.py 
+git commit -m "Updated greet.py version2" 
+NOTE: check git status before each and after command execution. 
+8. At this moment, we have performed two commits. Check the commit history using 
+command: git log  
+9. Revert to a previous version using commit id from git log and check the file content on 
+above screen automatically reverts to version based on the commit id. 
+git checkout <commit_id> greet.py 
+NOTE: <commit_id> should be updated according to which version you want to restore 
+from git log command. 
+eg: git checkout be1ecb4be35c76f92a18887dcab39f3bbea63afb greet.py 
