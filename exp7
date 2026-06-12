@@ -1,0 +1,46 @@
+Objective: Deploying applications to free cloud hosting providers (Heroku, Netlify, etc.), Rollback strategies, 
+Monitoring deployments. 
+Required Software / Tools: VSCode, HTML, Nelify/Heroku cloud. 
+Procedure: 
+1. Set up a Working directory or folder as below: 
+Open Visual Studio > Menu options > File > Open Folder > Right click > create New Folder with name Exp7. 
+2. Open terminal from visual studio > Menu options > Terminal > New Terminal. 
+3. Create a new file with below code and save it as index.html. 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Student Web Application</title> 
+</head> 
+<body> 
+<h1>Welcome to My Website</h1> 
+<p> 
+This website is deployed using Netlify cloud hosting platform. 
+</p> 
+<a href="about.html">About Page</a> 
+</body> 
+</html> 
+4. Now create one more file with below code and save it as about.html. 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>About Page</title> 
+</head> 
+<body> 
+<h1>About This Project</h1> 
+<p> 
+This is a simple static website hosted on Netlify. 
+</p> 
+<p> 
+Netlify provides free cloud hosting for frontend applications and static websites. 
+</p> 
+<a href="index.html">Back to Home</a> 
+</body> 
+</html> 
+5. Verify from local > navigate to Exp7 folder and double click index.html. 
+6. Signup for Nelify using google account.  
+https://app.netlify.com/signup 
+7. Click continue to deploy. Now you should be able to see Deploy project page. 
+8. Now, drag and drop Exp7 folder to Nelify. 
+9. Click on the url generated to validate the cloud deployment. 
+10. You can configure project by navigating to quick setup. 
+11. You can monitor using observability. 
