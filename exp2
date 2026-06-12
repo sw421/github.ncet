@@ -1,0 +1,123 @@
+Experiment II 
+Objective: Creating and managing repositories on GitHub, Branching and merging. 
+Required Software / Tools: GIT, GITHUB, Python, VSCode 
+Procedure: 
+1. Steps to Create a GitHub Account 
+a. Go to GitHub Website Open your browser and visit github.com. 
+b. Click “Sign up” You’ll find this option in the top-right corner of the 
+homepage. 
+c. Enter Your Details 
+ Username: Choose a unique name (this will be visible to others). 
+ Email address: Use a valid email you can access. 
+ Password: Create a strong password. 
+d. Verify Your Account GitHub may ask you to solve a puzzle or captcha to 
+confirm you’re human. 
+e. Confirm Email Check your inbox for a verification email from GitHub and 
+click the link inside to activate your account. 
+f. Set Up Preferences You can skip or customize settings later. 
+g. Start Using GitHub Once logged in, you can create repositories, explore 
+projects, and collaborate with others. 
+2. Create GitHub repository, on left pane click on + icon in the top-right corner and 
+select New repository. And fill the details: 
+a. Repository name (must be unique under your account). 
+b. Description (optional). 
+c. Choose Public or Private. 
+d. Check Add a README file if you want a starter file. 
+e. Click Create repository. 
+3. Set up local Working directory and terminal for Experiment 2: 
+a. Open Visual Studio > Menu options > File > Open Folder > Right click > 
+create New Folder with name Exp2. 
+b. Open Visual studio > Menu options > Terminal > New Terminal. 
+4. From the terminal run below commands to initialize git in the Exp2 folder.  
+git init 
+git status 
+5. Create a file, on VSCode left pane click + New file and name it num.py. On right 
+pane write a basic Python program as below: 
+# Print numbers (without input) 
+n = 10  # fixed value 
+for i in range(1, n + 1): 
+print(i) 
+6. Save the file and move to git Stage and commit the file using below commands: 
+git add num.py 
+git commit -m " num.py code without inputs" 
+7. Integrate GIT to GitHub: 
+a. Create client keys by running below command on Git terminal :  
+ssh-keygen -o 
+b. Let the value be default for key location and let passphrase be empty. (Hit 
+Enter to generate keys). 
+c. Now look for line “Your public key has been saved in ..” in above output. 
+d. Copy the contents of public key using below command: 
+cat C:\Users\Lenovo/.ssh/id_ed25519.pub 
+e. Now update public key in GitHub: 
+ Go to GitHub > Top Right > User Navigator Menu > Settings 
+ On settings Left Pane > Click SSH and GPG Keys 
+ Top Right > Click New SSH Key 
+ Updated Title as Clientkey1 and in key paste value copied from GIT. 
+ Click Add SSH Key to finish the GIT and GitHub integration.  
+8. Now got to GitHub and click on your repo. 
+9. Copy below commands from GitHub and run-on Git terminal to push code to 
+GitHub repository.  
+NOTE: Copy commands from your GitHub repo, below commands for reference. 
+git branch -M main 
+git remote add origin https://github.com/bandarichandra510/Exp2.git 
+git push -u origin main 
+10. Now refresh GitHub and you must see numpy file under Exp2 repository.  
+ 
+ 
+ 
+ 
+11. Now create a new branch with name dev using below command in Git Terminal: 
+ 
+git switch -c dev 
+ 
+git branch 
+ 
+NOTE: git branch is command that lists all branches and * indicates on which 
+branch you are working on. 
+ 
+ 
+ 
+ 
+12. Now create a new file in visual studio with name num1.py and update below code. 
+ 
+ 
+ 
+ 
+13. Add and commit the num1.py file in GIT. 
+ 
+git add num1.py 
+ 
+git commit -m " num1.py code with inputs" 
+ 
+git status 
+ 
+ 
+ 
+ 
+ 
+14. Now switch to main branch using below commands: 
+ 
+git branch 
+git switch main 
+git branch 
+ 
+NOTE: As you switch from dev to main branch you can see num1.py is strike 
+since the num1.py was commit on dev branch and now we you switched to main.  
+ 
+ 
+ 
+15. Now merge dev branch to main branch using below command: 
+ 
+git merge dev 
+ 
+NOTE: Now you see strike out line on num1.py goes off automatically. 
+ 
+ 
+ 
+16. Now push the num1.py code to GitHub using below command : 
+ 
+git push -u origin main 
+ 
+ 
+ 
+ 
